@@ -1,0 +1,2 @@
+# boovochat-privacy
+privacy/terms
