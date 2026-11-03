@@ -1,3 +1,4 @@
+cat > terms.html << 'TERMS_EOF'
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,83 +6,93 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Termos de Uso — BOOVOCHAT</title>
 <meta name="description" content="Termos de Uso do aplicativo BOOVOCHAT. Regras de utilização, compras, lives e monetização.">
+<meta property="og:title" content="Termos de Uso — BOOVOCHAT">
+<meta property="og:description" content="Regras para uso do aplicativo e dos serviços.">
+<meta property="og:type" content="website">
 <style>
   :root {
-    --bg: #050505;
-    --surface: #121212;
-    --surface-el: #1C1C1E;
-    --gold: #D4AF37;
-    --gold-light: #FBBF24;
+    --bg: #1E2026;
+    --surface: #252830;
+    --surface-el: #2D323E;
+    --primary: #5B73E8;
+    --primary-light: #D3E1FF;
+    --primary-dark: #3B4268;
     --text: #FFFFFF;
-    --text-sec: #AEAEB2;
-    --text-muted: #636366;
-    --border: rgba(255,255,255,0.08);
-    --error: #FF453A;
-    --success: #32D74B;
+    --text-sec: #A0A5B5;
+    --text-muted: #6B7280;
+    --border: rgba(211,225,255,0.10);
+    --error: #EF4444;
+    --success: #23A55A;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--bg);
+    background: linear-gradient(180deg, #1E2026 0%, #1E2026 60%, #3B4268 100%);
+    background-attachment: fixed;
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 15px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
   }
   .container { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
   header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
-  .logo {
-    display: inline-block; font-size: 28px; font-weight: 900; letter-spacing: 3px;
-    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  .brand { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 20px; }
+  .brand-icon { width: 56px; height: 56px; filter: drop-shadow(0 0 16px rgba(91,115,232,0.6)); }
+  .brand-text {
+    font-size: 28px; font-weight: 900; letter-spacing: 3px;
+    background: linear-gradient(135deg, #FFFFFF, var(--primary-light), var(--primary));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    margin-bottom: 12px;
   }
   h1 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 8px; }
   .subtitle { color: var(--text-sec); font-size: 14px; font-weight: 500; }
   .updated {
     display: inline-block; margin-top: 16px; padding: 6px 14px;
-    background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3);
-    border-radius: 999px; color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: 0.3px;
+    background: rgba(91,115,232,0.12); border: 1px solid rgba(91,115,232,0.35);
+    border-radius: 999px; color: var(--primary-light); font-size: 12px; font-weight: 700; letter-spacing: 0.3px;
   }
   .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 40px; }
-  .toc-title { color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .toc-title { color: var(--primary-light); font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
   .toc ol { list-style: none; counter-reset: item; }
   .toc li { counter-increment: item; padding: 6px 0; font-size: 14px; }
-  .toc li::before { content: counter(item) ". "; color: var(--gold); font-weight: 800; margin-right: 4px; }
+  .toc li::before { content: counter(item) ". "; color: var(--primary-light); font-weight: 800; margin-right: 4px; }
   .toc a { color: var(--text-sec); text-decoration: none; transition: color 0.2s; }
-  .toc a:hover { color: var(--gold); }
+  .toc a:hover { color: var(--primary-light); }
   section { margin-bottom: 40px; scroll-margin-top: 24px; }
-  h2 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; margin-bottom: 16px; padding-left: 14px; border-left: 3px solid var(--gold); line-height: 1.3; }
-  h3 { font-size: 15px; font-weight: 800; color: var(--gold-light); margin-top: 20px; margin-bottom: 10px; }
+  h2 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; margin-bottom: 16px; padding-left: 14px; border-left: 3px solid var(--primary); line-height: 1.3; }
+  h3 { font-size: 15px; font-weight: 800; color: var(--primary-light); margin-top: 20px; margin-bottom: 10px; }
   p { color: var(--text-sec); margin-bottom: 12px; }
   p strong { color: var(--text); font-weight: 700; }
   ul, ol { padding-left: 22px; margin-bottom: 16px; }
   li { color: var(--text-sec); padding: 4px 0; }
-  li::marker { color: var(--gold); }
-  a { color: var(--gold); text-decoration: underline; text-decoration-color: rgba(212,175,55,0.4); transition: text-decoration-color 0.2s; }
-  a:hover { text-decoration-color: var(--gold); }
+  li::marker { color: var(--primary-light); }
+  a { color: var(--primary-light); text-decoration: underline; text-decoration-color: rgba(91,115,232,0.5); transition: text-decoration-color 0.2s; }
+  a:hover { text-decoration-color: var(--primary-light); }
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin: 16px 0; }
-  .card-highlight { background: rgba(212,175,55,0.06); border-color: rgba(212,175,55,0.25); }
-  .card-title { color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+  .card-highlight { background: rgba(91,115,232,0.10); border-color: rgba(91,115,232,0.35); }
+  .card-title { color: var(--primary-light); font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
   .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 14px; border: 1px solid var(--border); }
   table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 500px; }
-  th { background: var(--surface-el); color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 14px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: var(--surface-el); color: var(--primary-light); font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 14px 12px; text-align: left; border-bottom: 1px solid var(--border); }
   td { padding: 12px; color: var(--text-sec); border-bottom: 1px solid var(--border); vertical-align: top; }
   tr:last-child td { border-bottom: none; }
   .alert { display: flex; gap: 12px; padding: 16px; border-radius: 12px; margin: 16px 0; font-size: 13px; line-height: 1.6; }
-  .alert-info { background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.3); color: #FBBF24; }
-  .alert-warn { background: rgba(255,69,58,0.08); border: 1px solid rgba(255,69,58,0.3); color: var(--error); }
-  .alert-success { background: rgba(50,215,75,0.08); border: 1px solid rgba(50,215,75,0.3); color: var(--success); }
+  .alert-info { background: rgba(91,115,232,0.10); border: 1px solid rgba(91,115,232,0.35); color: var(--primary-light); }
+  .alert-warn { background: rgba(239,68,68,0.10); border: 1px solid rgba(239,68,68,0.35); color: var(--error); }
+  .alert-success { background: rgba(35,165,90,0.10); border: 1px solid rgba(35,165,90,0.35); color: var(--success); }
   footer { margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 12px; }
+  footer a { color: var(--primary-light); }
   .contact-box { background: var(--surface-el); border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-align: center; margin: 24px 0; }
   .contact-label { color: var(--text-muted); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
-  .contact-value { color: var(--gold); font-size: 16px; font-weight: 700; }
+  .contact-value { color: var(--primary-light); font-size: 16px; font-weight: 700; }
   @media (max-width: 600px) {
     .container { padding: 32px 20px 60px; }
     h1 { font-size: 26px; }
     h2 { font-size: 17px; }
     .toc { padding: 20px 16px; }
+    .brand-icon { width: 44px; height: 44px; }
+    .brand-text { font-size: 22px; }
   }
 </style>
 </head>
@@ -89,10 +100,25 @@
 <div class="container">
 
   <header>
-    <div class="logo">BOOVOCHAT</div>
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#D3E1FF"/>
+            <stop offset="100%" stop-color="#5B73E8"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#logoGrad)"/>
+        <path d="M16 24 Q16 20 20 20 L44 20 Q48 20 48 24 L48 40 Q48 44 44 44 L30 44 L20 52 L20 44 Q16 44 16 40 Z" fill="#1E2026"/>
+        <circle cx="24" cy="32" r="2.5" fill="#D3E1FF"/>
+        <circle cx="32" cy="32" r="2.5" fill="#D3E1FF"/>
+        <circle cx="40" cy="32" r="2.5" fill="#D3E1FF"/>
+      </svg>
+      <span class="brand-text">BOOVOCHAT</span>
+    </div>
     <h1>Termos de Uso</h1>
     <p class="subtitle">Regras para uso do aplicativo e dos serviços</p>
-    <div class="updated">Última atualização: 27 de outubro de 2026</div>
+    <div class="updated">Última atualização: 03 de novembro de 2026</div>
   </header>
 
   <div class="toc">
@@ -108,6 +134,7 @@
       <li><a href="#criadores">Criadores e saques PIX</a></li>
       <li><a href="#verificacao">Verificação de identidade</a></li>
       <li><a href="#lives">Regras para lives</a></li>
+      <li><a href="#recursos">Recursos Premium e gamificação</a></li>
       <li><a href="#moderacao">Moderação e punições</a></li>
       <li><a href="#terceiros">Serviços de terceiros</a></li>
       <li><a href="#isencao">Isenções de responsabilidade</a></li>
@@ -122,8 +149,8 @@
 
   <section id="aceitacao">
     <h2>1. Aceitação dos termos</h2>
-    <p>Ao criar uma conta ou usar o <strong>BOOVOCHAT</strong>, você concorda integralmente com estes Termos de Uso e com a <a href="https://boovo-app.blogspot.com/2026/10/boovo-app-polices.html">Política de Privacidade</a>. Se não concordar, <strong>não use o aplicativo</strong>.</p>
-    <p>Estes termos regem sua relação com <strong>Desenvolvedor Independente</strong>, operadora do app, com sede em <strong>Brasil</strong>, Brasil.</p>
+    <p>Ao criar uma conta ou usar o <strong>BOOVOCHAT</strong>, você concorda integralmente com estes Termos de Uso e com a <a href="privacy.html">Política de Privacidade</a>. Se não concordar, <strong>não use o aplicativo</strong>.</p>
+    <p>Estes termos regem sua relação com <strong>Boovo Enterprise</strong>, operadora do app, com sede no <strong>Brasil</strong>.</p>
   </section>
 
   <section id="elegibilidade">
@@ -132,17 +159,17 @@
       <div>🚫</div>
       <div><strong>O uso do BOOVOCHAT é estritamente proibido para menores de 18 anos.</strong> Ao se cadastrar, você declara ter no mínimo 18 anos completos.</div>
     </div>
-    <p>Se identificarmos conta de menor, ela será <strong>imediatamente excluída</strong> e o dispositivo poderá ser bloqueado.</p>
+    <p>Se identificarmos conta de menor, ela será <strong>imediatamente excluída</strong> e o dispositivo poderá ser bloqueado. O app usa <strong>age gate</strong> — a data de nascimento é validada no cadastro e o servidor bloqueia qualquer perfil com idade inferior a 18.</p>
   </section>
 
   <section id="conta">
     <h2>3. Sua conta</h2>
     <ul>
       <li><strong>Uma conta por pessoa</strong> — não é permitido criar múltiplas contas para contornar banimentos</li>
+      <li><strong>Limite por dispositivo</strong> — o BOOVOCHAT permite até <strong>3 contas por aparelho</strong>. Ao atingir o limite, novas contas são bloqueadas automaticamente</li>
       <li><strong>Dados verdadeiros</strong> — você se compromete a fornecer informações precisas (nome, idade, fotos reais)</li>
-      <li><strong>Segurança</strong> — você é responsável por manter sua conta segura</li>
+      <li><strong>Segurança</strong> — você é responsável por manter sua conta segura. Recomendamos ativar o <strong>Chat Lock</strong> (biometria) nas configurações</li>
       <li><strong>Atividade</strong> — você é responsável por toda atividade na sua conta</li>
-      <li><strong>Dispositivo</strong> — limitamos contas por dispositivo (máximo 3) para prevenir fraude</li>
     </ul>
   </section>
 
@@ -150,22 +177,23 @@
     <h2>4. Uso aceitável</h2>
     <h3>Proibido fazer:</h3>
     <ul>
-      <li>🚫 Publicar <strong>nudez</strong>, conteúdo sexual explícito ou pornografia</li>
+      <li>🚫 Publicar <strong>nudez</strong> em campos públicos, story ou live (nudez só é permitida na <strong>Galeria Premium</strong>, mediante desbloqueio e moderação por IA)</li>
       <li>🚫 Publicar <strong>violência</strong>, automutilação, zoofilia ou abuso de menores</li>
       <li>🚫 <strong>Assediar</strong>, ameaçar, difamar ou perseguir outros usuários</li>
       <li>🚫 Compartilhar <strong>discurso de ódio</strong> (racismo, homofobia, transfobia, xenofobia)</li>
-      <li>🚫 Divulgar <strong>contatos pessoais</strong> (telefone, links, @) publicamente sem desbloqueio</li>
+      <li>🚫 Divulgar <strong>contatos pessoais</strong> (telefone, links, @) sem desbloqueio — o sistema de IA bloqueia automaticamente em stories, chat e lives</li>
       <li>🚫 <strong>Se passar por outra pessoa</strong> (catfishing, uso de fotos alheias)</li>
-      <li>🚫 Usar <strong>bots</strong>, scripts ou automação</li>
-      <li>🚫 <strong>Vender</strong> ou transferir contas, Tickets ou BTOKEN para terceiros</li>
-      <li>🚫 Praticar <strong>fraude</strong> (chargeback indevido, cartão clonado, PIX fraudulento)</li>
-      <li>🚫 <strong>Contornar</strong> o sistema de pagamento (compartilhar PIX, cobrar por fora)</li>
+      <li>🚫 Usar <strong>bots</strong>, scripts ou automação (rate limit é aplicado server-side)</li>
+      <li>🚫 <strong>Vender</strong> ou transferir contas, Tickets, BTOKEN ou itens cosméticos</li>
+      <li>🚫 Praticar <strong>fraude</strong> (chargeback indevido, cartão clonado, PIX fraudulento, auto-indicação)</li>
+      <li>🚫 <strong>Contornar</strong> o sistema de pagamento (compartilhar PIX por fora)</li>
       <li>🚫 Extrair dados de outros usuários (<strong>scraping</strong>, engenharia social)</li>
       <li>🚫 Usar o app para <strong>esquemas de pirâmide</strong>, prostituição ou tráfico</li>
+      <li>🚫 <strong>Falsificar geolocalização</strong> (GPS spoofing) para fraudar o Modo Viagem</li>
     </ul>
     <div class="alert alert-info">
       <div>ℹ️</div>
-      <div><strong>Moderação automática:</strong> nosso sistema detecta nudez e contato por IA. Conteúdo suspeito pode ser bloqueado automaticamente antes da publicação.</div>
+      <div><strong>Moderação automática:</strong> nosso sistema usa IA local no dispositivo para detectar nudez, e servidor para detectar contato (telefone, link, e-mail, CPF). Conteúdo suspeito pode ser bloqueado antes da publicação.</div>
     </div>
   </section>
 
@@ -201,18 +229,23 @@
         <tbody>
           <tr>
             <td><strong>Tickets</strong></td>
-            <td>Comprados via IAP, ganhos em desafios e anúncios</td>
-            <td>Desbloquear contatos (3), revelar curtidas (5), Super Like (4), Boost (10), destacar stories (5)</td>
+            <td>Comprados via IAP, ganhos em desafios diários/semanais, anúncios recompensados (máx. 3/dia), bônus de boas-vindas (20), referência (+10 por convite)</td>
+            <td>Desbloquear contato (1-10 por plataforma), revelar curtida (5), Super Like (4), Boost (10), destaque de story (5), Modo Viagem internacional (15), Mensagem Sensível (3), Mistério de story (5)</td>
           </tr>
           <tr>
             <td><strong>BTOKEN</strong></td>
             <td>Comprados via IAP</td>
-            <td>Enviar presentes em lives (apoiar criadores)</td>
+            <td>Enviar presentes em lives, presentes diretos, assinatura VIP de criadores (500 BTOKEN/mês)</td>
           </tr>
           <tr>
             <td><strong>BTOKEN recebido</strong></td>
             <td>Recebido de presentes em lives (criador)</td>
             <td>Saque via PIX (mínimo 1.000 BTOKEN = R$ 60,00)</td>
+          </tr>
+          <tr>
+            <td><strong>XP</strong></td>
+            <td>Desafios, presentes recebidos, tempo de live</td>
+            <td>Ranking (madeira → lenda), loja de XP (cosméticos, boosts, Tickets, itens sazonais)</td>
           </tr>
         </tbody>
       </table>
@@ -220,7 +253,7 @@
 
     <h3>Regras importantes:</h3>
     <ul>
-      <li><strong>Não são dinheiro real:</strong> Tickets e BTOKEN não são conversíveis em R$, com exceção do <strong>BTOKEN recebido por criadores</strong>, que pode ser sacado via PIX após cumprir os requisitos</li>
+      <li><strong>Não são dinheiro real:</strong> Tickets e XP nunca são conversíveis em R$. BTOKEN só é sacável por criadores verificados via PIX</li>
       <li><strong>Não são transferíveis:</strong> você não pode vender, doar ou transferir para outra conta</li>
       <li><strong>Não expiram:</strong> saldo permanece enquanto a conta estiver ativa</li>
       <li><strong>Sem reembolso:</strong> Tickets ou BTOKEN já utilizados não são reembolsáveis</li>
@@ -234,11 +267,13 @@
       <li>Super Likes e Rewinds ilimitados</li>
       <li>Mensagens e mídias sensíveis sem custo</li>
       <li>Acesso total à Galeria Premium</li>
-      <li>Modo Viagem ilimitado</li>
-      <li>Boost grátis diário</li>
-      <li>Destaques de Stories grátis por dia</li>
+      <li>Modo Viagem ilimitado (inclusive internacional)</li>
+      <li>Boost grátis diário (30 min)</li>
+      <li>Destaques de Stories grátis por dia (até 3/dia)</li>
+      <li><strong>Modo Fantasma</strong> — aparecer offline no Discover, Stories e Lives</li>
+      <li><strong>Vídeos no chat</strong> — envio de vídeos pessoais</li>
       <li>Experiência sem anúncios</li>
-      <li><strong>Selo Premium</strong> exclusivo (👑 coroa dourada) no perfil, chat e Discover</li>
+      <li><strong>Selo Premium</strong> exclusivo (👑 coroa dourada) no perfil, chat, Discover e lives</li>
     </ul>
   </section>
 
@@ -252,20 +287,20 @@
 
     <h3>Como solicitar</h3>
     <ul>
-      <li><strong>Google Play:</strong> <a href="https://support.google.com/googleplay/answer/2479637" target="_blank">central de reembolso</a></li>
-      <li><strong>App Store:</strong> <a href="https://reportaproblem.apple.com/" target="_blank">reportaproblem.apple.com</a></li>
+      <li><strong>Google Play:</strong> <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">central de reembolso</a></li>
+      <li><strong>App Store:</strong> <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a></li>
       <li><strong>Fraude/erro:</strong> contate <a href="mailto:boovoenterprise@gmail.com">boovoenterprise@gmail.com</a></li>
     </ul>
 
     <div class="alert alert-warn">
       <div>⚠️</div>
-      <div><strong>Chargeback indevido:</strong> contestar compra válida junto ao banco sem motivo gera <strong>bloqueio permanente</strong> da conta e possível ação judicial por fraude.</div>
+      <div><strong>Chargeback indevido:</strong> contestar compra válida junto ao banco sem motivo gera <strong>bloqueio permanente</strong> da conta e possível ação judicial por fraude. O BOOVOCHAT registra logs imutáveis de todas as transações para contestação.</div>
     </div>
   </section>
 
   <section id="criadores">
     <h2>8. Criadores e saques PIX</h2>
-    <p>Usuários que recebem <strong>presentes em lives</strong> podem sacar o BTOKEN recebido via PIX, após cumprir requisitos:</p>
+    <p>Usuários que recebem <strong>presentes em lives</strong> ou <strong>assinaturas VIP</strong> podem sacar o BTOKEN recebido via PIX, após cumprir requisitos:</p>
 
     <div class="table-wrap">
       <table>
@@ -273,10 +308,12 @@
           <tr><th>Requisito</th><th>Detalhe</th></tr>
         </thead>
         <tbody>
-          <tr><td>Verificação</td><td>Conta verificada (selfie + comparação com perfil)</td></tr>
+          <tr><td>Verificação</td><td>Conta verificada (selfie + código de desafio com nossa equipe)</td></tr>
+          <tr><td>KYC completo</td><td>Nome, CPF/CNPJ, data de nascimento, telefone, endereço e chave PIX</td></tr>
           <tr><td>Saldo mínimo</td><td>1.000 BTOKEN recebidos (= R$ 60,00)</td></tr>
-          <tr><td>Cadastro Asaas</td><td>CPF/CNPJ + endereço completo</td></tr>
-          <tr><td>Taxa de conversão</td><td>1 BTOKEN = R$ 0,06</td></tr>
+          <tr><td>Cadastro Asaas</td><td>Conta de pagamento Asaas aprovada (integração BOOVOCHAT)</td></tr>
+          <tr><td>Taxa de conversão</td><td>1 BTOKEN recebido = R$ 0,06</td></tr>
+          <tr><td>Liberação antifraude</td><td>Presentes ficam pendentes por 30 dias antes de poderem ser sacados</td></tr>
           <tr><td>Prazo de processamento</td><td>Até 1 dia útil após solicitação</td></tr>
         </tbody>
       </table>
@@ -285,28 +322,29 @@
     <h3>Regras</h3>
     <ul>
       <li><strong>Um saque por vez</strong> — não é possível solicitar novo saque enquanto um está em processamento</li>
-      <li><strong>Dados bancários:</strong> o PIX deve estar no mesmo CPF/CNPJ cadastrado no app</li>
-      <li><strong>Impostos:</strong> você é responsável por declarar os valores recebidos (IR, MEI, etc)</li>
-      <li><strong>Fraude:</strong> presentes de origem fraudulenta são bloqueados e podem resultar em banimento</li>
-      <li><strong>Liberação em 30 dias:</strong> BTOKEN recebidos ficam pendentes por 30 dias antes de poderem ser sacados (antifraude)</li>
+      <li><strong>PIX do titular</strong> — o PIX deve estar no mesmo CPF/CNPJ aprovado no KYC. Trocar de chave exige novo KYC</li>
+      <li><strong>Brasil apenas</strong> — o saque via PIX é exclusivo para contas brasileiras (detected_country = BR)</li>
+      <li><strong>Impostos</strong> — você é responsável por declarar os valores recebidos (IR, MEI, etc)</li>
+      <li><strong>Fraude</strong> — presentes de origem fraudulenta são bloqueados e podem resultar em banimento</li>
+      <li><strong>Split 70/30</strong> — a cada presente, o criador recebe <strong>70%</strong> do valor em BTOKEN. A plataforma retém 30% para custos operacionais (infraestrutura, taxas de pagamento, suporte e moderação)</li>
     </ul>
 
     <div class="alert alert-success">
       <div>💡</div>
-      <div><strong>Split:</strong> a cada presente enviado, o criador recebe <strong>70%</strong> do valor em BTOKEN. A plataforma retém 30% para custos operacionais.</div>
+      <div><strong>Assinatura VIP:</strong> criadores também recebem <strong>70%</strong> do valor das assinaturas VIP (350 BTOKEN de cada 500). O restante (30%) fica com a plataforma.</div>
     </div>
   </section>
 
   <section id="verificacao">
     <h2>9. Verificação de identidade</h2>
-    <p>Para obter o <strong>selo de verificado</strong> (✓ dourado), você envia uma selfie que é comparada manualmente com suas fotos de perfil pela nossa equipe.</p>
+    <p>Para obter o <strong>selo de verificado</strong> (✓ dourado), você envia uma selfie com um código de desafio gerado pela nossa equipe. A selfie é comparada manualmente com suas fotos de perfil.</p>
     <p>Assinantes <strong>Premium</strong> também recebem o <strong>selo Premium</strong> (👑 coroa dourada), exibido ao lado do nome no perfil, chat, Discover e lives.</p>
     <ul>
-      <li><strong>Uma tentativa por vez</strong> — envios seguidos podem ser rejeitados</li>
+      <li><strong>Uma tentativa por vez</strong> — envios seguidos podem ser rejeitados por rate limit</li>
       <li><strong>Prazo de análise:</strong> até 24 horas</li>
       <li><strong>Rejeição:</strong> você pode tentar novamente após o prazo</li>
       <li><strong>Fraude:</strong> tentar se passar por outra pessoa resulta em banimento permanente</li>
-      <li><strong>Não é obrigatório</strong> — você pode usar o app sem verificação (com menos recursos)</li>
+      <li><strong>Não é obrigatório</strong> — você pode usar o app sem verificação (com menos recursos, ex: não pode iniciar lives)</li>
     </ul>
   </section>
 
@@ -315,31 +353,72 @@
     <h3>Transmissão ao vivo</h3>
     <ul>
       <li><strong>Verificação obrigatória</strong> — apenas contas verificadas podem iniciar lives</li>
+      <li><strong>Brasil apenas</strong> — lives disponíveis somente para contas brasileiras (detected_country = BR)</li>
       <li><strong>Proibido:</strong> nudez, violência, conteúdo ilegal, drogas, menores na câmera</li>
       <li><strong>Você é responsável</strong> por tudo que aparecer na sua transmissão</li>
       <li><strong>Não gravar:</strong> as lives são transmitidas ao vivo; não armazenamos vídeos</li>
       <li><strong>Chat:</strong> mensagens ficam no histórico por até 24h após o fim da live</li>
+      <li><strong>Inatividade:</strong> se o host ficar 90s sem ping, a live é encerrada automaticamente</li>
     </ul>
 
     <h3>Presentes</h3>
     <ul>
       <li><strong>Irreversíveis</strong> — presentes enviados durante a live não podem ser estornados</li>
-      <li><strong>Não garantem</strong> nenhum benefício além do gesto simbólico</li>
+      <li><strong>Não garantem</strong> nenhum benefício além do gesto simbólico (destacar o nome, animações)</li>
       <li><strong>Proibido:</strong> oferecer presentes em troca de conteúdo sexual (configura prostituição)</li>
+      <li><strong>Modo batalha:</strong> quando ativo, viewers escolhem um dos dois lados ao enviar presentes</li>
     </ul>
 
     <h3>Moderação em lives</h3>
     <p>O host tem autoridade para:</p>
     <ul>
-      <li>Expulsar usuários do chat</li>
-      <li>Banir usuários da sala</li>
+      <li>Expulsar usuários do chat (kick)</li>
+      <li>Banir usuários da sala (ban temporário)</li>
+      <li>Promover moderadores (ADMs)</li>
       <li>Denunciar conteúdo inadequado</li>
     </ul>
-    <p><strong>3 infrações</strong> resultam em <strong>bloqueio permanente</strong> de iniciar lives.</p>
+    <p><strong>3 infrações</strong> resultam em <strong>bloqueio permanente</strong> de iniciar lives, com possibilidade de recurso.</p>
+  </section>
+
+  <section id="recursos">
+    <h2>11. Recursos Premium e gamificação</h2>
+
+    <h3>Desafios e XP</h3>
+    <ul>
+      <li><strong>Desafios diários</strong> (curtir, enviar mensagem, postar story, atualizar perfil, avaliar app) dão Tickets e XP</li>
+      <li><strong>Desafios semanais</strong> dão XP adicional</li>
+      <li><strong>Prestige</strong> — ao atingir o rank máximo (Lenda, 400.000 XP), você pode resetar o XP e subir 1 nível de prestígio (até 5)</li>
+      <li><strong>Loja de XP</strong> — compra de cosméticos (badges, rings, seals, temas), consumíveis (Tickets, Super Likes, Rewinds), boosts temporários e itens sazonais</li>
+      <li><strong>XP não expira</strong>, mas o cap diário de XP ganho por desafios é de 600 XP (detalhes no app)</li>
+    </ul>
+
+    <h3>Cosméticos</h3>
+    <ul>
+      <li><strong>Cor de nome e mensagem</strong> — aplica estilo visual no seu nome em chats e lives</li>
+      <li><strong>Alguns cosméticos exigem rank mínimo</strong> (ex: Lenda, Diamante)</li>
+      <li><strong>Cosméticos não são transferíveis</strong> — comprados via Tickets ou XP, ficam vinculados à sua conta</li>
+      <li><strong>Itens sazonais</strong> têm janela de disponibilidade e não voltam após o prazo</li>
+    </ul>
+
+    <h3>Videochamadas</h3>
+    <ul>
+      <li>Disponíveis apenas entre usuários com match confirmado</li>
+      <li>Podem ser encerradas por qualquer uma das partes a qualquer momento</li>
+      <li><strong>Não gravamos</strong> as chamadas. O vídeo trafega criptografado via Agora.io</li>
+      <li>Abuso de chamadas (spam, assédio) resulta em bloqueio do recurso</li>
+    </ul>
+
+    <h3>Outros recursos</h3>
+    <ul>
+      <li><strong>Chat Lock</strong> — bloqueia o chat com biometria local (FaceID/TouchID) ou PIN. A biometria <strong>nunca sai do seu aparelho</strong></li>
+      <li><strong>Voice bio</strong> — áudio de até 15s no perfil, visível publicamente</li>
+      <li><strong>Modo Viagem</strong> — muda temporariamente a localização. Internacional custa 15 Tickets (grátis para Premium)</li>
+      <li><strong>Mistério de story</strong> — respostas anônimas em stories custam 5 Tickets para revelar</li>
+    </ul>
   </section>
 
   <section id="moderacao">
-    <h2>11. Moderação e punições</h2>
+    <h2>12. Moderação e punições</h2>
     <p>Violar estes Termos pode resultar em:</p>
 
     <div class="table-wrap">
@@ -348,32 +427,38 @@
           <tr><th>Gravidade</th><th>Ação</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Leve</strong> (spam, ofensas)</td><td>Aviso + remoção do conteúdo</td></tr>
-          <tr><td><strong>Média</strong> (nudez, contato não autorizado)</td><td>Suspensão temporária (7-30 dias)</td></tr>
-          <tr><td><strong>Grave</strong> (fraude, assédio, catfish)</td><td>Banimento permanente</td></tr>
+          <tr><td><strong>Leve</strong> (spam, ofensas leves)</td><td>Aviso + remoção do conteúdo</td></tr>
+          <tr><td><strong>Média</strong> (nudez em local público, contato não autorizado)</td><td>Suspensão temporária (7-30 dias)</td></tr>
+          <tr><td><strong>Grave</strong> (fraude, assédio, catfish, GPS spoofing)</td><td>Banimento permanente</td></tr>
           <tr><td><strong>Crime</strong> (pedofilia, ameaça, tráfico)</td><td>Banimento + denúncia à polícia</td></tr>
         </tbody>
       </table>
     </div>
 
     <p>Você pode <strong>contestar</strong> qualquer punição em até 7 dias pelo e-mail <a href="mailto:boovoenterprise@gmail.com">boovoenterprise@gmail.com</a>. Analisaremos caso a caso.</p>
+
+    <div class="alert alert-info">
+      <div>ℹ️</div>
+      <div><strong>Denúncias:</strong> qualquer usuário pode denunciar perfis, mensagens ou lives. Denúncias confirmadas por 15 usuários distintos suspendem a conta automaticamente. Denúncias falsas recorrentes também resultam em punição.</div>
+    </div>
   </section>
 
   <section id="terceiros">
-    <h2>12. Serviços de terceiros</h2>
+    <h2>13. Serviços de terceiros</h2>
     <p>O app integra serviços de terceiros que possuem termos próprios:</p>
     <ul>
       <li><strong>Google Play Services</strong> — pagamentos e login</li>
       <li><strong>Apple App Store</strong> — pagamentos iOS</li>
-      <li><strong>Agora.io</strong> — transmissão de lives</li>
-      <li><strong>Asaas</strong> — processamento de PIX</li>
+      <li><strong>Agora.io</strong> — transmissão de lives e videochamadas</li>
+      <li><strong>Asaas</strong> — processamento de PIX e KYC</li>
       <li><strong>Expo</strong> — push notifications</li>
+      <li><strong>Supabase</strong> — banco de dados, autenticação e storage</li>
     </ul>
-    <p>Não somos responsáveis pelas práticas desses provedores.</p>
+    <p>Não somos responsáveis pelas práticas desses provedores. Consulte os termos de cada um antes de usar.</p>
   </section>
 
   <section id="isencao">
-    <h2>13. Isenções de responsabilidade</h2>
+    <h2>14. Isenções de responsabilidade</h2>
     <p>O BOOVOCHAT é fornecido <strong>"como está"</strong>. Não garantimos:</p>
     <ul>
       <li>Que você encontrará matches ou parceiros no app</li>
@@ -388,7 +473,7 @@
   </section>
 
   <section id="limitacao">
-    <h2>14. Limitação de responsabilidade</h2>
+    <h2>15. Limitação de responsabilidade</h2>
     <p>Na máxima extensão permitida pela lei brasileira, o BOOVOCHAT não é responsável por:</p>
     <ul>
       <li>Danos indiretos, lucros cessantes ou perda de oportunidade</li>
@@ -401,7 +486,7 @@
   </section>
 
   <section id="indenizacao">
-    <h2>15. Indenização</h2>
+    <h2>16. Indenização</h2>
     <p>Você concorda em indenizar o BOOVOCHAT por qualquer prejuízo decorrente de:</p>
     <ul>
       <li>Violação destes Termos</li>
@@ -412,7 +497,7 @@
   </section>
 
   <section id="encerramento">
-    <h2>16. Encerramento de conta</h2>
+    <h2>17. Encerramento de conta</h2>
     <h3>Você pode excluir</h3>
     <p>A qualquer momento em <strong>Configurações → Excluir conta</strong>. Seus dados serão apagados em até 30 dias (exceto registros legais).</p>
 
@@ -428,7 +513,7 @@
   </section>
 
   <section id="alteracoes">
-    <h2>17. Alterações nos termos</h2>
+    <h2>18. Alterações nos termos</h2>
     <p>Podemos atualizar estes Termos. Mudanças significativas serão comunicadas via:</p>
     <ul>
       <li>Notificação push</li>
@@ -439,7 +524,7 @@
   </section>
 
   <section id="lei">
-    <h2>18. Lei aplicável e foro</h2>
+    <h2>19. Lei aplicável e foro</h2>
     <p>Estes Termos são regidos pelas leis brasileiras, em especial:</p>
     <ul>
       <li><strong>Código Civil</strong> (Lei nº 10.406/2002)</li>
@@ -451,23 +536,25 @@
   </section>
 
   <section id="contato">
-    <h2>19. Contato</h2>
+    <h2>20. Contato</h2>
     <div class="contact-box">
       <div class="contact-label">Suporte e Dúvidas</div>
       <div class="contact-value">boovoenterprise@gmail.com</div>
       <p style="margin-top:16px;margin-bottom:0;font-size:13px">Responderemos em até 7 dias úteis.</p>
     </div>
     <p style="text-align:center;margin-top:24px;color:var(--text-muted);font-size:12px">
-      <strong>Operadora:</strong> Desenvolvedor Independente<br>
+      <strong>Operadora:</strong> Boovo Enterprise<br>
       Brasil
     </p>
   </section>
 
   <footer>
     <p>© 2026 BOOVOCHAT. Todos os direitos reservados.</p>
-    <p style="margin-top:8px">Este documento está em conformidade com o CDC e LGPD.</p>
+    <p style="margin-top:8px">Em conformidade com o CDC e LGPD. · <a href="privacy.html">Política de Privacidade</a></p>
   </footer>
 
 </div>
 </body>
 </html>
+TERMS_EOF
+echo "✅ terms.html salvo ($(wc -c < terms.html) bytes)"
