@@ -20,6 +20,7 @@
     --success: #23A55A;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  
   body {
     background: linear-gradient(180deg, #1E2026 0%, #1E2026 60%, #3B4268 100%);
     background-attachment: fixed;
@@ -32,26 +33,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 40px 20px;
   }
+
   .container {
-    max-width: 600px;
     width: 100%;
+    max-width: 640px;
     margin: 0 auto;
-    padding: 48px 24px 80px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo */
   }
-  .logo {
-    display: inline-flex;
+
+  /* LOGO E CABEÇALHO */
+  .header {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 24px;
+    text-align: center;
+    margin-bottom: 32px;
+    width: 100%;
   }
-  .logo svg {
-    width: 48px;
-    height: 48px;
-    filter: drop-shadow(0 0 12px rgba(91,115,232,0.5));
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    object-fit: contain;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 24px rgba(91,115,232,0.3);
   }
+
   .brand-text {
     font-size: 24px;
     font-weight: 900;
@@ -60,30 +73,35 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin-bottom: 16px;
   }
+
   h1 {
     font-size: 28px;
     font-weight: 900;
     letter-spacing: -0.5px;
-    margin-bottom: 12px;
     color: var(--text);
   }
+
   .subtitle {
     color: var(--text-sec);
     font-size: 15px;
-    margin-bottom: 32px;
+    margin-top: 8px;
     max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
   }
+
+  /* CARDS */
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 24px;
-    margin-bottom: 24px;
-    text-align: left;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left; /* Texto alinhado à esquerda dentro do card */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
+
   .card-title {
     color: var(--primary-light);
     font-size: 14px;
@@ -95,19 +113,23 @@
     align-items: center;
     gap: 8px;
   }
+
   .card p {
     color: var(--text-sec);
     font-size: 14px;
     margin-bottom: 12px;
   }
+
   .card p strong {
     color: var(--text);
   }
+
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
+
   ul li {
     position: relative;
     padding-left: 20px;
@@ -115,6 +137,7 @@
     color: var(--text-sec);
     font-size: 14px;
   }
+
   ul li::before {
     content: "•";
     color: var(--primary);
@@ -124,8 +147,35 @@
     font-size: 18px;
     line-height: 1.4;
   }
+
+  /* ALERTA */
+  .alert {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    background: rgba(239,68,68,0.10);
+    border: 1px solid rgba(239,68,68,0.35);
+    color: var(--error);
+    text-align: left;
+    width: 100%;
+  }
+
+  .alert svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+  }
+
+  /* BOTÃO */
   .btn-primary {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     background: var(--primary);
     color: #FFFFFF;
@@ -137,35 +187,22 @@
     margin-top: 8px;
     transition: all 0.2s;
     box-shadow: 0 4px 14px rgba(91,115,232,0.4);
+    text-align: center;
   }
+
   .btn-primary:hover {
     background: #4a63d8;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(91,115,232,0.6);
   }
-  .alert {
-    display: flex;
-    gap: 12px;
-    padding: 16px;
-    border-radius: 12px;
-    margin: 20px 0;
-    font-size: 13px;
-    line-height: 1.6;
-    background: rgba(239,68,68,0.10);
-    border: 1px solid rgba(239,68,68,0.35);
-    color: var(--error);
-    text-align: left;
-  }
-  .alert svg {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    margin-top: 2px;
-  }
+
+  /* RODAPÉ */
   .footer {
     margin-top: 40px;
+    text-align: center;
     font-size: 12px;
     color: var(--text-muted);
+    width: 100%;
   }
   .footer a {
     color: var(--primary-light);
@@ -174,31 +211,25 @@
   .footer a:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: 600px) {
+    .logo { width: 64px; height: 64px; }
+    h1 { font-size: 24px; }
+    .card { padding: 20px; }
+  }
 </style>
 </head>
 <body>
 
 <div class="container">
 
-  <div class="logo">
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="logoGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#D3E1FF"/>
-          <stop offset="100%" stop-color="#5B73E8"/>
-        </linearGradient>
-      </defs>
-      <circle cx="32" cy="32" r="30" fill="url(#logoGrad)"/>
-      <path d="M16 24 Q16 20 20 20 L44 20 Q48 20 48 24 L48 40 Q48 44 44 44 L30 44 L20 52 L20 44 Q16 44 16 40 Z" fill="#1E2026"/>
-      <circle cx="24" cy="32" r="2.5" fill="#D3E1FF"/>
-      <circle cx="32" cy="32" r="2.5" fill="#D3E1FF"/>
-      <circle cx="40" cy="32" r="2.5" fill="#D3E1FF"/>
-    </svg>
-    <span class="brand-text">BOOVOCHAT</span>
+  <div class="header">
+    <!-- Logo puxada do seu Supabase (a mesma do sino de notificação) -->
+    <img src="https://crqmiwdiccpthcerlhgq.supabase.co/storage/v1/object/public/avatars/icone.png" alt="Boovochat Logo" class="logo">
+    <div class="brand-text">BOOVOCHAT</div>
+    <h1>Exclusão de Conta</h1>
+    <p class="subtitle">Gerencie a exclusão permanente da sua conta e dos dados associados ao <strong>Boovochat</strong>.</p>
   </div>
-
-  <h1>Exclusão de Conta</h1>
-  <p class="subtitle">Gerencie a exclusão permanente da sua conta e dos dados associados ao <strong>Boovochat</strong>.</p>
 
   <div class="card">
     <div class="card-title">
