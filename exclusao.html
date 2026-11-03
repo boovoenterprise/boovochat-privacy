@@ -1,5 +1,257 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Exclusão de Conta - Boovochat</title></head><body style="background:#1E2026;color:#fff;font-family:sans-serif;padding:20px;">
-<h1>Exclusão de Conta</h1>
-<p>Para excluir sua conta do Boovochat e todos os seus dados, envie um e-mail para <strong>boovoenterprise@gmail.com</strong> com o assunto "Exclusão de Conta" contendo o e-mail cadastrado no app.</p>
-<p>Seus dados serão removidos dos nossos servidores em até 30 dias.</p>
-</body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exclusão de Conta — BOOVOCHAT</title>
+<meta name="description" content="Solicite a exclusão da sua conta e dados do aplicativo BOOVOCHAT.">
+<style>
+  :root {
+    --bg: #1E2026;
+    --surface: #252830;
+    --surface-el: #2D323E;
+    --primary: #5B73E8;
+    --primary-light: #D3E1FF;
+    --text: #FFFFFF;
+    --text-sec: #A0A5B5;
+    --text-muted: #6B7280;
+    --border: rgba(211,225,255,0.10);
+    --error: #EF4444;
+    --success: #23A55A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(180deg, #1E2026 0%, #1E2026 60%, #3B4268 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    text-align: center;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .logo svg {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 0 12px rgba(91,115,232,0.5));
+  }
+  .brand-text {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #FFFFFF, var(--primary-light), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .subtitle {
+    color: var(--text-sec);
+    font-size: 15px;
+    margin-bottom: 32px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  .card-title {
+    color: var(--primary-light);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card p {
+    color: var(--text-sec);
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .card p strong {
+    color: var(--text);
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--text-sec);
+    font-size: 14px;
+  }
+  ul li::before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .btn-primary {
+    display: inline-block;
+    width: 100%;
+    background: var(--primary);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 16px 24px;
+    border-radius: 12px;
+    margin-top: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(91,115,232,0.4);
+  }
+  .btn-primary:hover {
+    background: #4a63d8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(91,115,232,0.6);
+  }
+  .alert {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 13px;
+    line-height: 1.6;
+    background: rgba(239,68,68,0.10);
+    border: 1px solid rgba(239,68,68,0.35);
+    color: var(--error);
+    text-align: left;
+  }
+  .alert svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+  }
+  .footer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .footer a {
+    color: var(--primary-light);
+    text-decoration: none;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="logo">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="logoGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#D3E1FF"/>
+          <stop offset="100%" stop-color="#5B73E8"/>
+        </linearGradient>
+      </defs>
+      <circle cx="32" cy="32" r="30" fill="url(#logoGrad)"/>
+      <path d="M16 24 Q16 20 20 20 L44 20 Q48 20 48 24 L48 40 Q48 44 44 44 L30 44 L20 52 L20 44 Q16 44 16 40 Z" fill="#1E2026"/>
+      <circle cx="24" cy="32" r="2.5" fill="#D3E1FF"/>
+      <circle cx="32" cy="32" r="2.5" fill="#D3E1FF"/>
+      <circle cx="40" cy="32" r="2.5" fill="#D3E1FF"/>
+    </svg>
+    <span class="brand-text">BOOVOCHAT</span>
+  </div>
+
+  <h1>Exclusão de Conta</h1>
+  <p class="subtitle">Gerencie a exclusão permanente da sua conta e dos dados associados ao <strong>Boovochat</strong>.</p>
+
+  <div class="card">
+    <div class="card-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+      O que será excluído permanentemente
+    </div>
+    <p>Ao solicitar a exclusão, os seguintes dados serão removidos dos nossos servidores:</p>
+    <ul>
+      <li>Perfil completo (nome, idade, cidade, bio, fotos).</li>
+      <li>Histórico de conversas (mensagens de texto, áudio, vídeo e imagens).</li>
+      <li>Curtidas, matches e interações com outros usuários.</li>
+      <li>Stories, destaques e transmissões ao vivo salvas.</li>
+      <li>Informações de localização e preferências de descoberta.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      O que será mantido (e por quanto tempo)
+    </div>
+    <p>Por obrigações legais e fiscais, alguns dados <strong>não podem ser excluídos imediatamente</strong>:</p>
+    <ul>
+      <li><strong>Histórico de compras e transações financeiras:</strong> mantido por 5 anos, conforme exigido pela legislação brasileira (Marco Civil da Internet e legislação fiscal).</li>
+      <li><strong>Registros de acesso e logs de segurança:</strong> mantidos por 6 meses.</li>
+    </ul>
+    <p style="margin-top:12px; font-size:12px; color:var(--text-muted);">Esses dados são anonimizados ou mantidos em ambiente seguro e não são utilizados para outras finalidades.</p>
+  </div>
+
+  <div class="alert">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+    <div>
+      <strong>Atenção:</strong> A exclusão da conta é <strong>permanente e irreversível</strong>. Após o prazo de 30 dias, todos os dados listados acima serão apagados e não poderão ser recuperados.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      Como solicitar a exclusão
+    </div>
+    <p>Para iniciar o processo, preencha o formulário abaixo com o e-mail cadastrado na sua conta Boovochat. Nossa equipe processará sua solicitação em até <strong>30 dias</strong>.</p>
+    <a href="https://forms.gle/r1BSBkNcQ9Ey7hTA8" target="_blank" rel="noopener" class="btn-primary">
+      Preencher Formulário de Exclusão
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 BOOVOCHAT. Todos os direitos reservados.</p>
+    <p><a href="privacy.html">Política de Privacidade</a> · <a href="terms.html">Termos de Uso</a></p>
+  </div>
+
+</div>
+
+</body>
+</html>
