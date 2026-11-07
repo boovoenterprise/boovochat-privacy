@@ -98,7 +98,7 @@
     </div>
     <h1>Termos de Uso</h1>
     <p class="subtitle">Regras para uso do aplicativo e dos serviços</p>
-    <div class="updated">Última atualização: 03 de novembro de 2026</div>
+    <div class="updated">Última atualização: 06 de novembro de 2026</div>
   </header>
 
   <div class="toc">
@@ -170,6 +170,7 @@
       <li>🚫 Extrair dados de outros usuários (<strong>scraping</strong>, engenharia social)</li>
       <li>🚫 Usar o app para <strong>esquemas de pirâmide</strong>, prostituição ou tráfico</li>
       <li>🚫 <strong>Falsificar geolocalização</strong> (GPS spoofing) para fraudar o Modo Viagem</li>
+      <li>🚫 Usar o <strong>Modo Jogo</strong> para transmitir conteúdo de terceiros sem autorização (jogos, filmes, séries com direitos autorais, outras pessoas, conteúdo ilegal)</li>
     </ul>
     <div class="alert alert-info">
       <div>ℹ️</div>
@@ -341,6 +342,24 @@
       <li><strong>Inatividade:</strong> se o host ficar 90s sem ping, a live é encerrada automaticamente</li>
     </ul>
 
+    <h3>Modo Jogo (captura de tela)</h3>
+    <p>O BOOVOCHAT permite que hosts transmitam, durante uma live, o conteúdo da tela do seu dispositivo Android (jogo, vídeo, aplicativo) para os espectadores. Este recurso exige autorização do Android via permissão <code>FOREGROUND_SERVICE_MEDIA_PROJECTION</code>.</p>
+    <ul>
+      <li><strong>Autorização obrigatória:</strong> o Android exibe um diálogo de confirmação nativo antes de cada ativação. Você pode recusar a qualquer momento</li>
+      <li><strong>Não grava:</strong> a tela é apenas transmitida ao vivo (streaming). Nada é armazenado em nossos servidores</li>
+      <li><strong>Controle total do host:</strong> você liga/desliga a captura quando quiser pelo botão 🎮 na live</li>
+      <li><strong>Encerra junto com a live:</strong> ao encerrar a transmissão, a captura para automaticamente</li>
+      <li><strong>Responsabilidade sobre o conteúdo:</strong> você é o único responsável pelo que aparecer na sua tela — notificações, mensagens de outros apps, dados pessoais, conteúdo de terceiros com direitos autorais</li>
+      <li><strong>Proibido transmitir:</strong> conteúdo de terceiros protegido por direitos autorais sem autorização, dados sensíveis de outras pessoas, conteúdo ilegal ou pornográfico de terceiros</li>
+      <li><strong>Recomendação:</strong> ative o modo Não Perturbe (Do Not Disturb) no Android antes de transmitir para evitar que notificações privadas apareçam na tela</li>
+      <li><strong>Moderação:</strong> lives com Modo Jogo estão sujeitas às mesmas regras de moderação. Violações resultam em banimento igual ao da câmera</li>
+    </ul>
+
+    <div class="alert alert-warn">
+      <div>⚠️</div>
+      <div><strong>Atenção:</strong> ao transmitir a tela, <em>tudo</em> o que aparecer nela será visível aos espectadores — inclusive notificações de outros apps, e-mails, SMS, mensagens de WhatsApp e senhas caso você as digite na tela. Ative o modo Não Perturbe e feche apps sensíveis antes de iniciar.</div>
+    </div>
+
     <h3>Presentes</h3>
     <ul>
       <li><strong>Irreversíveis</strong> — presentes enviados durante a live não podem ser estornados</li>
@@ -394,6 +413,7 @@
       <li><strong>Voice bio</strong> — áudio de até 15s no perfil, visível publicamente</li>
       <li><strong>Modo Viagem</strong> — muda temporariamente a localização. Internacional custa 15 Tickets (grátis para Premium)</li>
       <li><strong>Mistério de story</strong> — respostas anônimas em stories custam 5 Tickets para revelar</li>
+      <li><strong>Modo Jogo</strong> — durante lives, transmite a tela do dispositivo Android para os espectadores. Requer autorização do sistema Android a cada ativação</li>
     </ul>
   </section>
 
@@ -409,7 +429,7 @@
         <tbody>
           <tr><td><strong>Leve</strong> (spam, ofensas leves)</td><td>Aviso + remoção do conteúdo</td></tr>
           <tr><td><strong>Média</strong> (nudez em local público, contato não autorizado)</td><td>Suspensão temporária (7-30 dias)</td></tr>
-          <tr><td><strong>Grave</strong> (fraude, assédio, catfish, GPS spoofing)</td><td>Banimento permanente</td></tr>
+          <tr><td><strong>Grave</strong> (fraude, assédio, catfish, GPS spoofing, transmissão de conteúdo protegido via Modo Jogo)</td><td>Banimento permanente</td></tr>
           <tr><td><strong>Crime</strong> (pedofilia, ameaça, tráfico)</td><td>Banimento + denúncia à polícia</td></tr>
         </tbody>
       </table>
@@ -429,7 +449,7 @@
     <ul>
       <li><strong>Google Play Services</strong> — pagamentos e login</li>
       <li><strong>Apple App Store</strong> — pagamentos iOS</li>
-      <li><strong>Agora.io</strong> — transmissão de lives e videochamadas</li>
+      <li><strong>Agora.io</strong> — transmissão de lives, videochamadas e captura de tela (Modo Jogo)</li>
       <li><strong>Asaas</strong> — processamento de PIX e KYC</li>
       <li><strong>Expo</strong> — push notifications</li>
       <li><strong>Supabase</strong> — banco de dados, autenticação e storage</li>
@@ -460,6 +480,7 @@
       <li>Ações de outros usuários (encontros, golpes, ofensas)</li>
       <li>Perda de dados por falha de dispositivo do usuário</li>
       <li>Interrupção por caso fortuito ou força maior</li>
+      <li>Vazamento de dados pessoais do host via Modo Jogo (o host é o único responsável pelo conteúdo exibido na tela transmitida)</li>
     </ul>
     <p>Em qualquer hipótese, nossa responsabilidade total está limitada ao <strong>valor efetivamente pago por você nos últimos 12 meses</strong>.</p>
     <p>Isso não exclui direitos do consumidor previstos no CDC.</p>
@@ -473,6 +494,7 @@
       <li>Violação de direitos de terceiros</li>
       <li>Uso indevido do app</li>
       <li>Conteúdo que você publicou</li>
+      <li>Conteúdo transmitido via Modo Jogo (captura de tela)</li>
     </ul>
   </section>
 
