@@ -97,7 +97,7 @@
     </div>
     <h1>Política de Privacidade</h1>
     <p class="subtitle">Como tratamos e protegemos seus dados pessoais</p>
-    <div class="updated">Última atualização: 03 de novembro de 2026</div>
+    <div class="updated">Última atualização: 06 de novembro de 2026</div>
   </header>
 
   <div class="toc">
@@ -144,7 +144,8 @@
           <tr><td><strong>Localização</strong></td><td>Coordenadas GPS aproximadas e cidade detectada (para mostrar perfis próximos)</td><td>Opcional</td></tr>
           <tr><td><strong>Contatos externos</strong></td><td>WhatsApp, Instagram, TikTok, Telegram, OnlyFans, Privacy, Fansly (se você preencher)</td><td>Opcional</td></tr>
           <tr><td><strong>Verificação</strong></td><td>Selfie + código de desafio de 6 dígitos (para conceder selo de verificado)</td><td>Opcional</td></tr>
-          <tr><td><strong>Lives</strong></td><td>Vídeo/áudio ao vivo (não gravado), chat público, presentes enviados/recebidos</td><td>Sim (durante a live)</td></tr>
+          <tr><td><strong>Lives (vídeo/áudio)</strong></td><td>Vídeo/áudio ao vivo da sua câmera e microfone (não gravado), chat público, presentes enviados/recebidos</td><td>Sim (durante a live)</td></tr>
+          <tr><td><strong>Transmissão de Tela (Modo Jogo)</strong></td><td>Captura da tela do seu dispositivo (jogo, vídeo, app que você escolher abrir) durante lives com Modo Jogo ativo. Não gravada, apenas transmitida ao vivo. Encerrada assim que você desliga o Modo Jogo</td><td>Opcional (só se você ativar)</td></tr>
           <tr><td><strong>Pagamentos</strong></td><td>Recibos IAP (Google Play), CPF/CNPJ, endereço e chave PIX (KYC de criadores via Asaas)</td><td>Sim (para transações)</td></tr>
           <tr><td><strong>Chat</strong></td><td>Mensagens, mídias, reações, presença (digitando/gravando), chat lock (biometria local)</td><td>Sim (durante uso)</td></tr>
           <tr><td><strong>Gamificação</strong></td><td>XP, streak, desafios diários/semanais, cosméticos comprados, prestige level</td><td>Sim</td></tr>
@@ -153,6 +154,11 @@
           <tr><td><strong>Push</strong></td><td>Token de notificação (revogável nas Configurações ou ao desinstalar)</td><td>Opcional</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="alert alert-info">
+      <div>ℹ️</div>
+      <div><strong>Permissão de captura de tela (MediaProjection):</strong> usada exclusivamente no recurso <em>"Modo Jogo"</em> das lives. O Android sempre exibe um diálogo nativo do sistema pedindo sua autorização <strong>antes de cada ativação</strong> (permissão <code>FOREGROUND_SERVICE_MEDIA_PROJECTION</code>). O vídeo da tela <strong>NÃO é armazenado</strong> — é transmitido em tempo real ao vivo aos espectadores via Agora.io e descartado assim que o Modo Jogo é desligado. Você pode encerrar a transmissão de tela a qualquer momento.</div>
     </div>
 
     <div class="alert alert-warn">
@@ -167,6 +173,7 @@
       <li><strong>Criar e gerenciar sua conta</strong> — autenticação via Google</li>
       <li><strong>Mostrar perfis compatíveis</strong> — descoberta com base em idade, gênero, localização, interesses e metas</li>
       <li><strong>Viabilizar conversas, áudio e lives</strong> — chat (texto, imagem, áudio, vídeo, localização), videochamadas e transmissão ao vivo</li>
+      <li><strong>Transmitir sua tela (Modo Jogo)</strong> — durante lives, você pode optar por transmitir o conteúdo da tela do seu dispositivo (jogo, vídeo, etc.) aos espectadores. Autorizado por você a cada ativação via diálogo do Android; pode ser desligado a qualquer momento</li>
       <li><strong>Processar pagamentos</strong> — Tickets, BTOKEN, Premium e saques de criadores via PIX</li>
       <li><strong>Verificação de identidade</strong> — conceder selo de verificado (✓) e selo Premium (👑)</li>
       <li><strong>Moderação de conteúdo</strong> — IA detecta nudez, contato e ofensas (via expo-image-manipulator + ONNX local)</li>
@@ -192,6 +199,7 @@
           <tr><td>Moderação e combate a crimes</td><td>Obrigação legal e legítimo interesse</td></tr>
           <tr><td>Localização aproximada</td><td>Consentimento (você pode negar)</td></tr>
           <tr><td>Contatos externos (WhatsApp etc.)</td><td>Consentimento (você preenche)</td></tr>
+          <tr><td>Captura de tela (Modo Jogo)</td><td>Consentimento explícito (você aprova cada ativação via diálogo do Android)</td></tr>
           <tr><td>Gamificação, XP, streak</td><td>Execução de contrato</td></tr>
           <tr><td>Chat lock (biometria)</td><td>Consentimento (fica no aparelho, não vai pro servidor)</td></tr>
         </tbody>
@@ -212,7 +220,7 @@
 
     <h3>Lives e Vídeo</h3>
     <ul>
-      <li><strong>Agora.io</strong> — transmissão de vídeo/áudio ao vivo, com servidores globais</li>
+      <li><strong>Agora.io</strong> — transmissão de vídeo, áudio e tela do dispositivo ao vivo (inclui o recurso Modo Jogo), com servidores globais</li>
     </ul>
 
     <h3>Push, Analytics e Erros</h3>
@@ -251,7 +259,8 @@
           <tr><td>Reações em mensagens</td><td>Enquanto a mensagem existir</td></tr>
           <tr><td>Presença (digitando/gravando)</td><td>Efêmera — apagada em segundos</td></tr>
           <tr><td>Stories</td><td>24h ativos + arquivo até você deletar</td></tr>
-          <tr><td>Lives (vídeo)</td><td>Não gravadas — apenas transmitidas ao vivo</td></tr>
+          <tr><td>Lives (vídeo/áudio)</td><td>Não gravadas — apenas transmitidas ao vivo</td></tr>
+          <tr><td>Captura de tela (Modo Jogo)</td><td>Não gravada. Transmitida apenas ao vivo e descartada ao desligar o Modo Jogo</td></tr>
           <tr><td>Histórico financeiro</td><td>5 anos (obrigação fiscal)</td></tr>
           <tr><td>Logs de acesso</td><td>6 meses (Marco Civil da Internet)</td></tr>
           <tr><td>Registros de verificação</td><td>2 anos após aprovação</td></tr>
@@ -274,6 +283,7 @@
       <li>Políticas de acesso restrito (RLS) no banco de dados</li>
       <li>Rate limiting para prevenir abuso</li>
       <li>Chat lock com biometria local (FaceID/TouchID nunca sai do aparelho)</li>
+      <li>Captura de tela via MediaProjection do Android apenas com autorização explícita do usuário em cada ativação</li>
       <li>Monitoramento contínuo de anomalias e crash reports</li>
       <li>Backups criptografados diários</li>
     </ul>
@@ -317,6 +327,7 @@
       <li><strong>SecureStore / Keychain</strong> — token de sessão (login)</li>
       <li><strong>Analytics anônimo</strong> — eventos agregados (sem identificar você individualmente)</li>
       <li><strong>Fingerprint de dispositivo</strong> — para limitar contas por aparelho (antifraude)</li>
+      <li><strong>Biometria (FaceID/TouchID)</strong> — usada apenas localmente para o "Chat Lock". Nunca é enviada aos nossos servidores</li>
     </ul>
     <div class="card">
       <div class="card-title">Sobre este site (GitHub Pages)</div>
